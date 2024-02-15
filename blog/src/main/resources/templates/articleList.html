@@ -6,18 +6,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>블로그 글 등록</title>
+    <title>블로그 글 목록</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="page-header">
-        <h1>My blog</h1>
-        <h4>블로그에 오신 것을 환영합니다.</h4>
-        </div>
-        <table class="table table-hover">
 
-        </table>
+<div class="container">
+    <h2>Spring mvc06</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">BOARD</div>
+        <div class="panel-body">
+
+            <table class="table">
+                <tr>
+                    <td>번호</td>
+                    <td>제목</td>
+                    <td>내용</td>
+                    <td>조회수</td>
+                    <td>작성일</td>
+                </tr>
+                    <tr th:each="article : ${articles}">
+                        <td th:text="${article.id}"></td>
+                        <td th:text="${article.title}"></td>
+                        <td th:text="${article.content}"></td>
+                        <td th:text="${article.readcount}"></td>
+                        <td th:text="|Posted on ${#strings.arraySplit(article.createdAt,'T')[0]}|">
+                    </tr>
+            </table>
+
+        </div>
+        <div class="panel-footer">스프링 연습_Yeong_Huns</div>
     </div>
+</div>
 </body>
 </html>
