@@ -17,7 +17,7 @@
     <h4 class="mb-3">블로그에 오신 것을 환영합니다.</h4>
 </div>
 <div class="container">
-    <h2>Spring mvc06</h2>
+    <h2>MyBlog</h2>
     <div class="card">
         <div class="card-header">BOARD</div>
         <div class="card-body" id="views">
@@ -42,7 +42,7 @@
                     <td colspan="3">
                         <textarea th:id="|textBox${article.id}|" rows="7" class="form-control" th:text="${article.content}" th:readonly="true"></textarea>
                         <br>
-                        <button th:if="|textBox${article}.readOnly=='true'|" class="btn btn-sm btn-primary" th:onclick="|updateContent(${article.id})|">수정</button>
+                        <button th:id="|updateBtn${article.id}|" class="btn btn-sm btn-primary" th:onclick="|updateContent(${article.id})|">수정</button>
                         <button class="btn btn-sm btn-danger" th:onclick="|deleteContent(${article.id})|">삭제</button>
                     </td>
                 </tr>
@@ -50,7 +50,7 @@
             </table>
         </div>
         <div class="card-body" id="WriteForm"></div>
-        <div class="card-footer">스프링 연습_Yeong_Huns</div>
+        <div class="card-footer">Yeong_Huns</div>
     </div>
 </div>
 
